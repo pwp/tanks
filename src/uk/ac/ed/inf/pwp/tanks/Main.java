@@ -1,13 +1,22 @@
 package uk.ac.ed.inf.pwp.tanks;
+import javax.swing.JFrame;
 
-public class Main {
+public class Main extends JFrame {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		public Main() {
+			Window w = new Window();
+	        add(w);
+	        
+	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        setSize(800, 800);
+	        setLocationRelativeTo(null);
+	        setTitle("PWP Tanks");
+	        setResizable(false);
+	        setVisible(true);
+	        w.run();
+	    }
 
-	}
-
+	    public static void main(String[] args) {
+	    	new Main();
+	    }
 }
