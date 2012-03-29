@@ -30,6 +30,10 @@ public class Tank {
 		power=p;
 	}
 	
+	public void changepos(int p) {
+		x+=p;
+	}
+	
 	public void changea(double a) {
 		angle+=a;
 	}

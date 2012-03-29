@@ -40,10 +40,11 @@ public class Missile {
 		speedy+=dsy;
 	}
 	
-	public void move() {
+	public void move(double wind) {
 		x+=(speedx/30);
 		y+=(speedy/30);
 		speedy+=1;
+		speedx+=wind;
 	}
 	
 	public Rectangle getBounds() {
