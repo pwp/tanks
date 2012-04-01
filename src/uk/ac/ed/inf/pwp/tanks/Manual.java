@@ -1,5 +1,3 @@
-package uk.ac.ed.inf.pwp.tanks;
-
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Font;

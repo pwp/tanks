@@ -1,4 +1,3 @@
-package uk.ac.ed.inf.pwp.tanks;
 import java.awt.Rectangle;
 
 

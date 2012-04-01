@@ -1,4 +1,3 @@
-package uk.ac.ed.inf.pwp.tanks;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
