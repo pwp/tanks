@@ -1,3 +1,5 @@
+package uk.ac.ed.inf.pwp.tanks;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -15,20 +17,16 @@ public class Main extends JFrame implements ActionListener {
 			
 			//Start of menu
 	        JMenuBar menuBar;
-	        JMenu filemenu, helpmenu;
-	        JMenuItem ng,op,ex,man;
+	        JMenu filemenu;
+	        JMenuItem ng,ex,man;
 	        
 	        //Create the menu bar.
 	        menuBar = new JMenuBar();
 
-	        //Create the menus.
+	        //Create the menu.
 	        filemenu = new JMenu("File");
 	        filemenu.getAccessibleContext().setAccessibleDescription("General commands");
 	        menuBar.add(filemenu);
-	        
-	        helpmenu = new JMenu("Help");
-	        helpmenu.getAccessibleContext().setAccessibleDescription("Helpful stuff");
-	        menuBar.add(helpmenu);
 
 	        //Menu items for the File Menu
 	        ng = new JMenuItem("New Game",KeyEvent.VK_T);
@@ -37,12 +35,12 @@ public class Main extends JFrame implements ActionListener {
 	        ng.addActionListener(this);
 	        ng.setActionCommand("1");
 	        filemenu.add(ng);
-	        op = new JMenuItem("Options", KeyEvent.VK_P);
-	        op.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.ALT_MASK));
-	        op.getAccessibleContext().setAccessibleDescription("Allows you to configure options");
-	        op.addActionListener(this);
-	        op.setActionCommand("2");
-	        filemenu.add(op);
+	        man = new JMenuItem("Manual", KeyEvent.VK_P);
+	        man.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.ALT_MASK));
+	        man.getAccessibleContext().setAccessibleDescription("Shows the game manual");
+	        man.addActionListener(this);
+	        man.setActionCommand("2");
+	        filemenu.add(man);
 	        filemenu.addSeparator();
 	        ex = new JMenuItem("Exit", KeyEvent.VK_P);
 	        ex.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.ALT_MASK));
@@ -50,14 +48,6 @@ public class Main extends JFrame implements ActionListener {
 	        ex.addActionListener(this);
 	        ex.setActionCommand("3");
 	        filemenu.add(ex);
-	        
-	        //Menu items for the Help Menu
-	        man = new JMenuItem("Manual", KeyEvent.VK_P);
-	        man.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.ALT_MASK));
-	        man.getAccessibleContext().setAccessibleDescription("Shows the game manual");
-	        man.addActionListener(this);
-	        man.setActionCommand("4");
-	        helpmenu.add(man);
 	        
 	        this.setJMenuBar(menuBar);
 	        //End of menu.
@@ -78,14 +68,12 @@ public class Main extends JFrame implements ActionListener {
 				w.reset();
 				break;
 			case 2:
-				
+				this.setVisible(false);
+				new Manual(this);
 				break;
 			case 3:
 				System.exit(0);
 				break;
-			case 4:
-				this.setVisible(false);
-				new Manual(this);
 			}
 		}
 		

@@ -1,3 +1,5 @@
+package uk.ac.ed.inf.pwp.tanks;
+
 import java.awt.Rectangle;
 
 public class Missile {
@@ -47,7 +49,7 @@ public class Missile {
 	}
 	
 	public Rectangle getBounds() {
-        return new Rectangle((int) Math.round(x),(int) Math.round(y), 16, 16);
+        return new Rectangle((int) Math.round(x),(int) Math.round(y), 10, 10);
     }
 	
 }

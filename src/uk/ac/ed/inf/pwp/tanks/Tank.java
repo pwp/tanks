@@ -1,6 +1,6 @@
+package uk.ac.ed.inf.pwp.tanks;
+
 import java.awt.Rectangle;
-
-
 
 public class Tank {
 	
@@ -29,8 +29,12 @@ public class Tank {
 		power=p;
 	}
 	
-	public void changepos(int p) {
-		x+=p;
+	public void changepos(int p, Terrain t) {
+		if ((x==284 && p>0) || (x==500 && p<0) || (x==0 && p<0) || (x==784 && p>0)) {} 
+		else {
+			x+=p;
+			y=t.geth(x);
+		}
 	}
 	
 	public void changea(double a) {
